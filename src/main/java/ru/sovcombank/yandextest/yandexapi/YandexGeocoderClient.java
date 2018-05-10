@@ -28,7 +28,7 @@ public class YandexGeocoderClient {
             logger.info("Request position for address " + address);
             Response response = client
                     //.target("https://geocode-maps.yandex.ru/1.x/?format=json&geocode=" + address)
-                    .target("http://localhost:8090/get")
+                    .target("http://localhost:8090/get?geocode="+ address)
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .get();
             if (response.getStatus() == 200) {

@@ -31,7 +31,7 @@ public class YandexTask {
             if (geoLock.tryAcquire()) {
                 try {
                     log.info("geoLock success");
-                        String pos = geocoderClient.RequestGeo("%D0%B3%20%D0%A2%D0%BE%D0%BC%D1%81%D0%BA,%20%D1%83%D0%BB%20%D0%9A%D1%80%D1%8B%D0%BB%D0%BE%D0%B2%D0%B0,%20%D0%B4%D0%BE%D0%BC14,%20%D0%BA%D0%B2.1");
+                        String pos = geocoderClient.RequestGeo("г Юрьев-Польский, ул Школьная, дом40, кв.23".replace(" ", "%20"));
                         BigDecimal lat = null;
                         BigDecimal lon = null;
                         if (pos != null) {
