@@ -12,12 +12,6 @@ import javax.ws.rs.client.ClientBuilder;
 
 @Configuration
 public class ApplicationConfig {
-    @Bean
-    public FilterRegistrationBean registration(HiddenHttpMethodFilter filter) {
-        FilterRegistrationBean registration = new FilterRegistrationBean(filter);
-        registration.setEnabled(false);
-        return registration;
-    }
 
     @Bean
     public Client createClient() {

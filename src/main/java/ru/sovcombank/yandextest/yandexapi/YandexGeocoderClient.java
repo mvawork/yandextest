@@ -9,6 +9,7 @@ import ru.sovcombank.yandextest.yandexapi.domain.YandexGeocoderResponse;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.net.URI;
 
 @Component
 public class YandexGeocoderClient {
@@ -26,9 +27,10 @@ public class YandexGeocoderClient {
     public String RequestGeo(String address) {
         try {
             logger.info("Request position for address " + address);
+            URI uri = URI.create("http://localhost:8090/get?geocode="+ address);
             Response response = client
                     //.target("https://geocode-maps.yandex.ru/1.x/?format=json&geocode=" + address)
-                    .target("http://localhost:8090/get?geocode="+ address)
+                    .target(uri)
                     .request(MediaType.APPLICATION_JSON_TYPE)
                     .get();
             if (response.getStatus() == 200) {
