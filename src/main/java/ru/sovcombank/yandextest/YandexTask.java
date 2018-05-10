@@ -32,13 +32,6 @@ public class YandexTask {
                 try {
                     log.info("geoLock success");
                         String pos = geocoderClient.RequestGeo("г Юрьев-Польский, ул Школьная, дом40, кв.23".replace(" ", "%20"));
-                        BigDecimal lat = null;
-                        BigDecimal lon = null;
-                        if (pos != null) {
-                            String[] arrPos = pos.split(" ");
-                            lat = new BigDecimal(arrPos[0]);
-                            lon = new BigDecimal(arrPos[1]);
-                        }
                 } finally {
                     try {
                         Thread.sleep(1000);
