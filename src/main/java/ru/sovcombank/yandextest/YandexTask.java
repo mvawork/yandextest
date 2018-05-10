@@ -41,7 +41,7 @@ public class YandexTask {
                         }
                 } finally {
                     try {
-                        Thread.sleep(60000);
+                        Thread.sleep(1000);
                     } catch (Exception ignored) {
 
                     }
