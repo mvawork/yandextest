@@ -29,7 +29,7 @@ public class YandexGeocoderClient {
             logger.info("Request position for address " + address);
 
             URI uri = client
-                    .target("http://localhost:8090/get")
+                    .target("https://requestslogger.herokuapp.com")
                     .getUriBuilder()
                     .queryParam("geocode", address)
                     .build();
